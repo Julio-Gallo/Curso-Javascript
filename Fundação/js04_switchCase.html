@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwitchCase - Seleção  Múltipla</title>
+</head>
+<body>
+    <!--Definição do elemento formulário para entrada de dados em HTML-->
+    <form name="formcalend" action="" method="post">
+        Digite o mês (01 a 12): <input type="text" name="f_mes" size="4" maxlength="2"/><p></p>
+        <input type="button" name="btn_processar" value="Processar" onclick="verificames()"/>
+        <input type="reset" name="btn_limpar" value="Limpar"/><p></p>
+        O mês corresponde é: <input type="text" name="f_nomemes" size="18" max="15"/>
+    </form>
+
+      <!--Início da esrtrutura Javascript-->
+
+      <script lang="javascript">
+        /*Objetivo: Com o recurso de seleção múltipla - switch...case, pesquisar o nome do mês de referência atraves do respectivo mês informado.
+        - Objetivos/Métidos utilizados:
+        Entrada: documento.form
+        Saída: document.form
+        - Importante:
+            Os campos do formulário serão identificados com o prefixo f_
+            O campos Javascript serão identificados com o prefixo js_
+        */
+
+        var js_mes;
+
+        /*Início da função verificames() para a captura do formulário e pesquisa por Seleção Múltipla */
+        function verificames() {
+        /*Captura do vlr do mês do form f_mes e transferência/atribuição para a variável do javascript js_mes*/
+        js_mes=parseInt(document.formcalend.f_mes.value)
+
+        /*Inicio da estrutura de seleção switch...case*/
+        switch(js_mes) {
+            case 1 : document.formcalend.f_nomemes.value = 'Janeiro'; break;
+            case 2 : document.formcalend.f_nomemes.value = 'Fevereiro'; break;
+            case 3 : document.formcalend.f_nomemes.value = 'Março'; break;
+            case 4 : document.formcalend.f_nomemes.value = 'Abril'; break;
+            case 5 : document.formcalend.f_nomemes.value = 'Maio'; break;
+            case 6 : document.formcalend.f_nomemes.value = 'Junho'; break;
+            case 7 : document.formcalend.f_nomemes.value = 'Julho'; break;
+            case 8 : document.formcalend.f_nomemes.value = 'Agosto'; break;
+            case 9 : document.formcalend.f_nomemes.value = 'Setembro'; break;
+            case 10 : document.formcalend.f_nomemes.value = 'Outubro'; break;
+            case 11 : document.formcalend.f_nomemes.value = 'Novembro'; break;
+            case 12 : document.formcalend.f_nomemes.value = 'Dezembro'; break;
+        default : document.formcalend.f_nomemes.value = '** Mês inválido!**'; break;
+        }
+        /*Final da estrutura de seleção múltipla switch...case */
+        }
+        /*Final da função verificames() pata captura dos dados do formulário e pesquisa por seleção múltipla */
+        /*TABELA UNICODE
+        Utilizaçao da tabela unicode para configuração dos caracteres de acentuação
+        Mais em <http://devmedia.com.br/unicode-conceitos-basicos/25169> - acessado em 25/10/2016*/
+      </script>
+</body>
+</html>

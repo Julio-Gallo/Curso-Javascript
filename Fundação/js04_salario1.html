@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salario</title>
+</head>
+<body>
+    <script lang="javascript">
+    /*Calcular saláro líquido de um horista
+    - Informar a classificação salarial
+    - Objetos/Métodos utilizados:
+        entrada: windows.prompt
+        saída: document.write
+        */    
+    
+        var qths;//qtfe de horas
+        var vlrhs;// valor da hora
+        var inss;// percentual inss
+        var desc;//total dos descontos
+        var salbr;//salário bruto
+        var sallq;//salário líquido
+
+        /*Entrada de dados*/
+        qths= parseFloat(window.prompt('Informe a quantidade de horas trabalhadas/mês: (135 a 180)' , '00'));
+        vlrhs= parseFloat(window.prompt('Informe o valor da hora trabalhada: (25 a 50)','00'));
+        inss= parseFloat(window.prompt('Informe o percentual de desconto do INSS: (5 a 15)','00'));
+
+        /*Processamento*/
+        salbr = vlrhs * qths;
+        desc = (inss/100) * salbr
+        sallq = salbr - desc
+
+        /*Saída de dados com consistência de valores*/
+        document.write('<p><b>DEMONSTRATIVO PARA CÁLCULO DO SALÁRIO LÍQUIDO</b>');
+
+        document.write('<p>Quantidade de horas trabalhadas (135 a 180) =><b>' + qths + '</b>');
+        if (qths > 180) {
+            document.write('...(<b>Valor máximo excedido</b>)');
+        }
+        if (qths < 135) {
+            document.write('...(<b>Valor mínimo inválido!</b>)');
+        }
+
+        document.write('<p>Valor da hora trabalhada (25 a 50) =><b>' + vlrhs + '</b>');
+        if(vlrhs > 50) {
+            document.write('...(<b>Valor máximo excedido!</b)');
+        }
+        if(vlrhs < 25) {
+            document.write('...(<b>Valor mínimo inválido</b>)');
+        }
+
+        document.write('<p>Percentual de desconto INSS (5 a 15) =><b>' + inss + '</b>');
+        if(inss > 15) {
+            document.write('...(<b>Valor máximo excedido!</b>)');
+        }
+        if(inss < 5) {
+            document.write('...(<b>Valor mínimo inválido</b>)');
+        }
+
+        document.write('<p>================================================================');
+        document.write('<p><b>Salário bruto => R$</b>'+' ' + salbr);
+        document.write('<p><b>Valor do desconto INSS => R$</b>'+' ' + desc );
+        document.write('<p><b>Salário Líquido => R$</b>'+' ' + sallq);
+
+        /*Saída de dados com aninhamento de if*/
+        if(sallq > 10500) {
+            document.write('...(<b>Salário acima do mercado!</b>Maior que R$ 10.500,00)');
+        }
+        else {
+            if(sallq > 6000) {
+                document.write('...(<b>Salário dentro do mercado!</b>Maior de R$ 6.000,00)');
+            }
+            else{
+                if(sallq > 3000){
+                    document.write('...(<b>Salário abaixo do mercado!</b>Maior que R$ 3.000,00)');
+                }
+                else {
+                    document.write('...(<b>Salário fora do mercado!</b>Menor ou igual a R$ 3.000,00) ')
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacenacao.html</title>
+</head>
+<body>
+    <h3>Programa de Boas Vindas com concatenação de campos!</h3>
+
+    <!--Definição de Formulário-->
+    <form name="formConcatena" action="" method="post">
+        Digite o nome .....: <input type="text" name="f_nome"><br><br>
+        Digite o sobrenome...: <input type="text" name="f_sobrenome" ><br><br>
+        <input type="button" name="btn_concatena" value="Juntar" onclick="concatena()">
+        <input type="reset" name="btn_cancela" value="Limpar">
+    </form>
+
+    <!--Definição do código Javascript-->
+    <script lang="javascript">
+    <!--
+        /*Objetivo:Capturar dados do usuário, juntar os campos e apresentar uma saudação personalizada
+        Elementos de Entrada: m�todo form do objeto document
+	    Elementos de Sa�da: m�todo alert do objeto window */
+
+        /*Definição das variáveis*/
+        var nome;
+        var sobrenome;
+        var nomecompleto;
+        
+        function concatena( ) {
+
+            /*Entrada de Dados*/
+            nome = document.formConcatena.f_nome.value;
+            sobrenome = document.formConcatena.f_sobrenome.value;
+
+            /*Processamento*/
+            nomecompleto = nome + ' e ' + sobrenome;
+
+            /*Saída de Dados*/
+            window.alert('Olá'+ ' ' + nomecompleto);
+        }
+   -->
+</script>
+</body>
+</html>

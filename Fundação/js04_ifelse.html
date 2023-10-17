@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js04_ifelse.html</title>
+</head>
+<body>
+    <script lang="javascript">
+
+        var n1;
+        var n2;
+
+        /*Entrada de dados*/
+        n1 = parseInt(window.prompt('Informe o primeiro número:' , '00'));
+        n2 = parseInt(window.prompt('Informe o segundo número:' , '00' ));
+
+        /*Saída de dados sem classificação*/
+        document.write('Primeiro número digitado =' + n1);
+        document.write('<p>Segundo número digitado =' + n2);
+
+        /*Saída com classificação condicional composta (if...else)*/
+        if (n1 < n2) {
+            document.write('<p><b>Classificação em ordem crescente:</b>' + n1 + ' e ' + n2);
+        }
+        else {
+            document.write('<p><b>Classificação em ordem decrescente:</b>' + n2 + ' e ' + n1); 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js05_confirm/if/else</title>
+</head>
+<body>
+    <script lang="javascript">
+    /*Desenvolver programa qua faça o teste de execução de duas opções*/
+
+    var js_resp;
+
+    /*Após selecionado p botão, a variável js_resp receberá um valor lógico true ou false, capturado pelo método confirm*/
+    js_resp = window.confirm('Clique em um dos botões.');
+
+    /*Decisão condicional composta if else comparado ao vlr lógico true*/
+    if(js_resp==true){
+        document.write('Você acionou o botão <b>OK</b>!!');
+    }
+    else {
+        document.write('Você acionou o botão <b>Cancelar</b>!!');
+    }
+
+    </script>
+</body>
+</html>

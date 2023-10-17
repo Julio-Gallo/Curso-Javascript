@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_funcao.html - Somatória com entrada de dados por Formulário--</title>
+</head>
+<body>
+    <h3>Somatória de dois valores inteiros por formulário</h3>
+
+    <form name="MeuForm" action="" method="post">
+        Entre com o vlr 1: <input type="text" name="n1"><p></p>
+        Entre com o vlr 2: <input type="text" name="n2"><p></p>
+        <input type="button" name="btn-somar" value="Somar" onclick="soma()">
+        <input type="reset" name="btn_apagar" value="Apagar">
+    </form>
+
+    <script lang="javascript">
+
+        var n1;
+        var n2;
+        var soma;
+
+        function soma() {
+
+        n1 =parseInt(document.MeuForm.n1.value);
+        n2 = parseInt(document.MeuForm.n2.value);
+
+        /*Processamento*/
+        soma = n1 + n2;
+
+        /*Saída*/
+        window.alert ('A soma entre os valores é ' + soma.toString() + '.');
+        }
+    </script>
+
+</body>
+</html>
