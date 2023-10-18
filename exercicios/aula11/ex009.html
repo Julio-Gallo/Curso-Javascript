@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Nacionalidade</title>
+</head>
+<body>
+    <h1>Verificação de Nacionalidade</h1>
+    País em que vive:<input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="Verificar" onclick="verificar()"><!--on click chama a ação com o nome entre ""-->
+    <div id="res">
+
+    </div> 
+
+    <script>   
+        function verificar() {// o que vai acontecer quando clicar
+            var txtnac = window.document.querySelector('input#txtnac')//objeto txtnac ligado ao texto digitado
+            var res = window.document.querySelector('div#res')// objeto res ligado à div
+            var pais = txtnac.value
+            res.innerHTML = `<p>O país em que você vive é <strong>${pais}</strong></p>`// innerTexT não aceita tags
+            if (pais == 'Brasil' ) {
+                res.innerHTML += `<p>Você é <strong>Brasileiro!</strong></p>`//innerHTML aceita tags
+            } else {
+            res.innerHTML += `<P>Você é <strong>estrangeiro!</P>`
+        }
+    }// função antes do bloco, que fica entre {} com nome que são ações e após () que podem conter parametros
+    </script>
+    
+</body>
+</html>
